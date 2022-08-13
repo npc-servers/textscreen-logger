@@ -2,7 +2,7 @@ local ranksToGetLog = TEXTSCREENLOGGER.ranksToReceiveLog
 util.AddNetworkString( "TextScreenLoggerLog" )
 
 hook.Add( "OnEntityCreated", "TextScreenLogger", function( ent )
-    timer.Simple( 0, function()
+    timer.Simple( 0.01, function()
         if not IsValid( ent ) then return end
         local class = ent:GetClass()
         local textGetter = TEXTSCREENLOGGER.loggers[class]
@@ -27,7 +27,7 @@ function TEXTSCREENLOGGER.sendToAdmins( text )
 end
 
 function TEXTSCREENLOGGER.log( owner, class, text )
-    local logString = TEXTSCREENLOGGER.prefix .. " " .. owner:GetName() .. " spawned " .. class .. " containing: \"" .. text .. "\""
+    local logString = TEXTSCREENLOGGER.prefix .. " " .. owner:GetName() or "NULL OWNER" .. " spawned " .. class .. " containing: \"" .. text .. "\""
     print( logString )
     ServerLog( logString .. "\n" )
     TEXTSCREENLOGGER.sendToAdmins( logString )
