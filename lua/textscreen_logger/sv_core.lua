@@ -28,7 +28,7 @@ function TEXTSCREENLOGGER.sendToAdmins( text )
 end
 
 function TEXTSCREENLOGGER.log( owner, class, text )
-    local logString = TEXTSCREENLOGGER.prefix .. " " .. owner:GetName() .. " spawned " .. class .. " containing: \"" .. text .. "\""
+    local logString = TEXTSCREENLOGGER.prefix .. " " .. owner:GetName() .. "<" .. owner:SteamID() .. "> spawned " .. class .. " containing: \"" .. text .. "\""
     print( logString )
     ServerLog( logString .. "\n" )
     TEXTSCREENLOGGER.sendToAdmins( logString )
