@@ -16,7 +16,6 @@ TEXTSCREENLOGGER.loggers[class] = function( ent )
 end
 
 local ts = scripted_ents.GetStored( class ).t
-
 ts._SetLine = ts._SetLine or ts.SetLine
 
 ts.SetLine = function( self, line, text, ... )
