@@ -7,7 +7,7 @@ ts._TriggerInput = ts._TriggerInput or ts.TriggerInput
 
 function ts:TriggerInput( name, value )
     if name ~= "String" then
-        ts:_TriggerInput( name, value )
+        return ts:_TriggerInput( name, value )
     end
 
     timer.Simple( 0, function()
@@ -16,5 +16,5 @@ function ts:TriggerInput( name, value )
         TEXTSCREENLOGGER.Log( self, owner, class, value )
     end )
 
-    return ts._TriggerInput( self, name, value )
+    return ts:_TriggerInput( name, value )
 end
