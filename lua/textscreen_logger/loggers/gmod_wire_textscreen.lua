@@ -16,5 +16,5 @@ function ts:TriggerInput( name, value )
         TEXTSCREENLOGGER.Log( self, owner, class, value )
     end )
 
-    return ts:_TriggerInput( name, value )
+    return ts._TriggerInput( self, name, value )
 end
