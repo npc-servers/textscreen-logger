@@ -13,7 +13,7 @@ function ts:TriggerInput( name, value )
     timer.Simple( 0, function()
         if not IsValid( self ) then return end
         local owner = self:CPPIGetOwner()
-        TEXTSCREENLOGGER.Log( self, owner, class, value )
+        TEXTSCREENLOGGER.Log( self, owner, class, value, true )
     end )
 
     return ts._TriggerInput( self, name, value )

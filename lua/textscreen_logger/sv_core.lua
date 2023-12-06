@@ -11,8 +11,9 @@ function TEXTSCREENLOGGER.sendToAdmins( text )
     end
 end
 
-function TEXTSCREENLOGGER.Log( ent, owner, class, text )
+function TEXTSCREENLOGGER.Log( ent, owner, class, text, hookonly )
     hook.Run( "TSLScreenSpawned", ent, owner, class, text )
+    if hookonly then return end
 
     local logString = TEXTSCREENLOGGER.prefix .. " " .. owner:GetName() .. "<" .. owner:SteamID() .. "> spawned " .. class .. " containing: \"" .. text .. "\""
     print( logString )
