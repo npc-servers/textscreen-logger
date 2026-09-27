@@ -10,10 +10,12 @@ function ts:TriggerInput( name, value )
         return ts._TriggerInput( self, name, value )
     end
 
+    local text = string.sub( tostring( value ), 1, 1024 )
+
     timer.Simple( 0, function()
         if not IsValid( self ) then return end
         local owner = self:CPPIGetOwner()
-        TEXTSCREENLOGGER.Log( self, owner, class, value, true )
+        TEXTSCREENLOGGER.Log( self, owner, class, text, true )
     end )
 
     return ts._TriggerInput( self, name, value )
